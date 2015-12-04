@@ -18,17 +18,12 @@
 package org.terracotta.consensus.entity;
 
 import org.terracotta.consensus.entity.server.LeaderElector;
-import org.terracotta.entity.BasicServiceConfiguration;
-import org.terracotta.entity.ClientCommunicator;
-import org.terracotta.entity.ClientDescriptor;
-import org.terracotta.entity.PassiveServerEntity;
-import org.terracotta.entity.ServerEntityService;
-import org.terracotta.entity.ServiceRegistry;
+import org.terracotta.entity.*;
 
 /**
  * @author Alex Snaps
  */
-public class CoordinationServerEntityService implements ServerEntityService<CoordinationServerEntity, PassiveServerEntity> {
+public class CoordinationServerEntityService implements ServerEntityService<ActiveServerEntity<?>, PassiveServerEntity<?>> {
   
   private static final String ENTITY_CLASS_NAME = "org.terracotta.consensus.entity.client.CoordinationClientEntity";
 
