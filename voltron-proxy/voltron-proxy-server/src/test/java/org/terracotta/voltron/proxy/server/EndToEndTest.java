@@ -27,8 +27,11 @@ import org.terracotta.entity.EntityResponse;
 import org.terracotta.entity.InvocationBuilder;
 import org.terracotta.entity.InvokeContext;
 import org.terracotta.entity.InvokeFuture;
+import org.terracotta.entity.MessageCallback;
 import org.terracotta.entity.MessageCodec;
+import org.terracotta.entity.MessageCodecException;
 import org.terracotta.exception.EntityException;
+import org.terracotta.exception.RuntimeEntityException;
 import org.terracotta.voltron.proxy.ClientId;
 import org.terracotta.voltron.proxy.MessageListener;
 import org.terracotta.voltron.proxy.ProxyEntityMessage;
@@ -344,6 +347,11 @@ public class EndToEndTest {
           throw new UnsupportedOperationException("Implement me!");
         }
       };
+    }
+
+    @Override
+    public void invokeWithCallBack(MessageCallback<ProxyEntityResponse> messageCallBack) throws MessageCodecException {
+      throw new RuntimeException("Not supported");
     }
 
   }
